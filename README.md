@@ -15,6 +15,11 @@
 **ALU.v** -> Unidad Aritmético Lógica.<br>
 **Adder.v** -> Sumador.<br>
 **Mux2x1.v** -> Multiplexor 2x1.<br>
+**UC.v** -> Unidad de control.<br>
+**mainDeco.v** -> Decodificador principal.<br>
+**aluDeco.v** -> Decodificador de ALU.<br>
+**dataPath.v** -> Camino de datos.<br>
+**RV32i** -> Modulo que agrupa TODO.<br>
 
 ### Testbenchs
 Pruebas de cada módulo.<br>
