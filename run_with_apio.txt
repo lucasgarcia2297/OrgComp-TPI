@@ -1,0 +1,23 @@
+Requisitos: 
+1. GTKWave instalado
+2. apio instalado: 
+        Python3
+        comando -> pip install apio
+
+Para ejecutar con apio: 
+
+1- "cd" a la carpeta del componente a probar
+2- init: ejecutar comando 
+        apio init -b edu-ciaa-fpga
+
+3- verify: ejecutar comando
+        apio verify
+
+4- simulate: ejecutar comando y se abrirá gtkwave
+        apio sim
+
+----------------
+EXTRA: 
+para incluir librerias en otros directorios, en el apio.ini agregar: 
+[options]
+verilog_libraries = src/submodulosW
