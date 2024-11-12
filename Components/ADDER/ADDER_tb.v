@@ -5,7 +5,7 @@ module ADDER_tb;
 
     wire [31:0] sal;
 
-    Adder uut(
+    ADDER uut(
         .op1(op1),
         .op2(op2),
         .sal(sal)
