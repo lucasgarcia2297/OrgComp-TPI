@@ -15,14 +15,14 @@ module DATAPATH(
     input wire rst,                 // Reset
     input wire [31:0] ins,          // Instruction                  // Viene de la Memory
     input wire [31:0] data1,        // Data de la memoria
-    output wire branch,             //Salida de branch
-    output wire jump,               //Salida de jump
-    output wire [1:0] resSrc,       //Salida de resSrc de 2 bits correspondiente a data_S
-    output wire [2:0] ALUcontrol,   //Control de la ALU
-    output wire aluSrc,             //Salida aluSrc
-    output wire [1:0] inmSrc,       //Salida inmSrc de 2 bits
-    output wire regWrite,           //Salida regWrite
-    output wire PCSrc,              //Salida PCSrc
+    // input wire branch,             //Salida de branch // Reemplazada por PCSrc 
+    // input wire jump,               //Salida de jump // Reemplazada por PCSrc 
+    input wire PCSrc,              // Origen de PC
+    input wire regWrite,           // Señal escritura en BR
+    input wire [1:0] inmSrc,       // Señal origen de inmediato
+    input wire aluSrc,             // Señal origen de ALU
+    input wire [2:0] ALUcontrol,   // Señal control operación ALU	
+    input wire [1:0] resSrc,       // Señal de origen de resultado
     // Outputs
     output [31:0] pc,                //al Module Memory // Dirección de la instrucción
     output [31:0] address,           //al Module Memory // Dirección de la memoria
