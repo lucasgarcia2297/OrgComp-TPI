@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module Memory_tb();
+module MEMORY_tb();
     // Definición de señales de prueba
     reg clk;
     reg we;                             // Señal de habilitación de escritura
@@ -11,7 +11,7 @@ module Memory_tb();
     wire [31:0] R_Data;                 // Salida de dato de DM
 
     // Instancia del módulo Memory
-    Memory uut (
+    MEMORY uut (
         .clk(clk),
         .address_Instruction(address_Instruction),
         .we(we),
@@ -28,8 +28,8 @@ module Memory_tb();
     end
 
     initial begin
-        $dumpfile("MEM_tb.vcd");
-        $dumpvars(0, Memory_tb);
+        $dumpfile("MEMORY_tb.vcd");
+        $dumpvars(0, MEMORY_tb);
 
         //TEST 1: Escritura en una dirección de DM
         address_Instruction = 5'd24;    // Instrucción store (sw) en la posición 24 de IM

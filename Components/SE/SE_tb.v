@@ -48,9 +48,46 @@ module SE_tb;
         src = 2'b00;
         // inmExt = 00000000000000000000000000001111 // Valor esperado en inmExt
         #10
+
+        //TEST TIPO I
+        /* 
+            lw t0, 0(zero)
+            0x00002283
+            00000000000000000010001010000011
+            imm[11:0]    | rs1   | funct3 | rd      | opcode  
+            000000000100 | 00101 | 000    | 01010   | 0000011
+        */
+        instr = 32'h00002283;
+        inm = instr[31:7];
+        src = 2'b00; 
+        // inmExt = 00000000000000000000000000000000; //Este debe ser el resultado.
+        #10; 
         //FIN TEST TIPO I
 
         //TEST TIPO S
+        /*
+            00000010101001101000001100100011
+            inm[11:5] | rs2   | rs1   | funct3 | inm[4:0] | opcode
+            0000001   | 01011 | 00101 | 000    | 10001    | 0100011
+        */
+        inm = 25'b0000001010100110100000110;
+        src = 2'b01;
+        // inmExt = 00000000000000000000000000100110 // Valor esperado en inmExt
+        #10
+        
+        /*
+            SW x5, 20(x10)
+            00000000100000000010000000100011
+            inm[11:5] | rs2   | rs1   | funct3 | inm[4:0] | opcode
+            0000000   | 01010 | 00101 | 010    | 10100    | 0100011
+        */
+        instr = 32'h00802023;
+        inm = instr[31:7];
+        src = 2'b01;
+        // inmExt = 00000000000000000000000000000000 // Valor esperado en inmExt
+        #10
+
+
         /*
             00000010101001101000001100100011
             inm[11:5] | rs2   | rs1   | funct3 | inm[4:0] | opcode

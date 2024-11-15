@@ -1,11 +1,11 @@
-`include "../Components/IM/IM.v"
-`include "../Components/DM/DM.v"
+`include "../../Components/IM/IM.v"
+`include "../../Components/DM/DM.v"
 
 //MEMORIA
 /*brief: la Memoria agrupa los dos bancos de almacenamiento de la computadora
   a  simular: Memoria de Instrucciones y Memoria de Datos. */
 
-module Memory(   
+module MEMORY(   
   input wire clk,                             //Señal de reloj
   input wire [4:0] address_Instruction,      //Dirección de Lectura de Instrucción de Memoria de Programa
   input wire we,                              //Señal de habilitar escritura de Memoria de Datos

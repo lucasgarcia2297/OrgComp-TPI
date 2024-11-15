@@ -1,8 +1,8 @@
 //Module: RISCV32I
 // brief: Processor RISC-V 32I
 
-`include "../Modules/UC/UC.v"
-`include "../Modules/DATAPATH/DATAPATH.v"
+`include "../../Modules/UC/UC.v"
+`include "../../Modules/DATAPATH/DATAPATH.v"
 
 module RISCV32I(
     // Entradas
