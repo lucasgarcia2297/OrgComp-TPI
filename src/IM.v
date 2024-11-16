@@ -2,13 +2,13 @@
 //brief: es un arreglo de 32 registros de 32 bits.
 
 module IM(
-    input wire [4:0] addressIM,
+    input wire [31:0] addressIM, 
     output wire [31:0] inst
 );
 
 /*Defino el contenido de la memoria de instrucciones*/
 reg[31:0] memory [31:0];
-reg[4:0] deco_address;
+reg[31:0] deco_address;
 
 initial begin
     memory[0] = 32'h00300413;       //addi s0, zero, 3 	# a = 3

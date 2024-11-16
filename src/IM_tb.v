@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
 module IM_tb();
-    reg [4:0] addressIM;
+    reg [31:0] addressIM;
     wire [31:0] inst;
 
     IM uut(
@@ -12,11 +12,11 @@ module IM_tb();
         $dumpfile("./IM_tb.vcd");
         $dumpvars(0, IM_tb);
 
-        addressIM = 5'b11;
+        addressIM = 32'h00000040;
         #10;
-        addressIM = 5'b0;
+        addressIM = 32'h00001400;
         #10;
-        addressIM = 5'b01;
+        addressIM = 32'h00000028;
         #10;
     end;
 

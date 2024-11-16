@@ -1,6 +1,6 @@
 module DM_tb();
     reg clk, we; 
-    reg [4:0] address;
+    reg [31:0] address;
     reg [31:0] wd;
     wire [31:0] rd; 
 

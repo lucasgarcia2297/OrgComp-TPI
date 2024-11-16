@@ -4,8 +4,8 @@ module MEMORY_tb();
     // Definición de señales de prueba
     reg clk;
     reg we;                             // Señal de habilitación de escritura
-    reg [4:0] address_Instruction;      // Dirección de instrucción en IM
-    reg [4:0] address_Data;             // Dirección de dato en DM
+    reg [31:0] address_Instruction;      // Dirección de instrucción en IM
+    reg [31:0] address_Data;             // Dirección de dato en DM
     reg [31:0] W_Data;                  // Dato de escritura en DM
     wire [31:0] R_Instruction;          // Salida de instrucción de IM
     wire [31:0] R_Data;                 // Salida de dato de DM

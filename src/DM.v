@@ -3,7 +3,7 @@
 
 module DM(
     input wire clk,                 //Señal de reloj
-    input wire [4:0] addressDM,     //Dirección de lectura/escritura
+    input wire [31:0] addressDM,     //Dirección de lectura/escritura
     input wire we,                  //Señal de escritura
     input wire [31:0] wd,           //Dato de escritura
     output wire [31:0] rd           //Dato de lectura
@@ -23,9 +23,9 @@ module DM(
     begin
         if(we)
         begin
-            memory[addressDM] <= wd;
+            memory[addressDM/4] <= wd;
         end
     end
-    assign rd = memory[addressDM];
+    assign rd = memory[addressDM/4];
 
 endmodule

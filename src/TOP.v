@@ -20,9 +20,9 @@ module TOP(
 
     MEMORY Memory(
         .clk(clk),
-        .address_Instruction(pc[4:0]),
+        .address_Instruction(pc),
         .we(writeEnable),
-        .address_Data(address[4:0]),
+        .address_Data(address),
         .W_Data(writeData),
         .R_Instruction(instruction),
         .R_Data(data)

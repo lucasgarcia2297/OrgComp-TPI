@@ -8,9 +8,9 @@
 
 module MEMORY(   
   input wire clk,                             //Señal de reloj
-  input wire [4:0] address_Instruction,      //Dirección de Lectura de Instrucción de Memoria de Programa
+  input wire [31:0] address_Instruction,      //Dirección de Lectura de Instrucción de Memoria de Programa
   input wire we,                              //Señal de habilitar escritura de Memoria de Datos
-  input wire [4:0] address_Data,             //Dirección de Lectura/Escritura de Memoria de Datos
+  input wire [31:0] address_Data,             //Dirección de Lectura/Escritura de Memoria de Datos
   input wire [31:0] W_Data,                   //Dato de escritura de Memoria de Datos
   output wire [31:0] R_Instruction,           //Instrucción leída de Memoria de Programa
   output wire [31:0] R_Data                   //Dato de lectura de Memoria de Datos 
