@@ -6,7 +6,7 @@ module DM_tb();
 
 DM uut(
     .clk(clk),
-    .address(address),
+    .addressDM(address),
     .wd(wd),
     .we(we),
     .rd(rd)

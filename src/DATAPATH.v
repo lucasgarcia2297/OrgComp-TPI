@@ -1,13 +1,13 @@
 // MODULO: DATAPATH
 //brief: Camino de datos
 
-`include "../../Components/PC/PC.v"
-`include "../../Components/BR/BR.v"
-`include "../../Components/SE/SE.v"
-`include "../../Components/ALU/ALU.v"
-`include "../../Components/ADDER/ADDER.v"
-`include "../../Components/MUX2x1/MUX2x1.v"
-`include "../../Components/MUX4x1/MUX4x1.v"
+// `include "PC.v"
+// `include "BR.v"
+// `include "SE.v"
+// `include "ALU.v"
+// `include "ADDER.v"
+// `include "MUX2x1.v"
+// `include "MUX4x1.v"
 
 module DATAPATH(
     // Inputs

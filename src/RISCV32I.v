@@ -1,19 +1,19 @@
 //Module: RISCV32I
 // brief: Processor RISC-V 32I
 
-`include "../../Modules/UC/UC.v"
-`include "../../Modules/DATAPATH/DATAPATH.v"
+// `include "UC.v"
+// `include "DATAPATH.v"
 
 module RISCV32I(
     // Entradas
     input wire clk,                 // Clock
-    input wire instruction,         // Instruction
+    input wire [31:0] instruction,  // Instruction
     input wire [31:0] data1,        // Data from Memory: Data Memory
     // Salidas
     output wire [31:0] pc,          // Address next instruction             // Salida datapath
     output wire [31:0] address,     // Address Memory: Data Memory          // Salida datapath
     output wire [31:0] writeData,   // Data to write in Memory: Data Memory // Salida datapath
-    output wire writeEnable,        // Enable write in Memory: Data Memory  // Salida Unit Control
+    output wire writeEnable        // Enable write in Memory: Data Memory  // Salida Unit Control
 );
 
     //Wires to connect Unit Control and Datapath
@@ -45,7 +45,7 @@ module RISCV32I(
     DATAPATH DataPath(
         .clk(clk),
         // .rst(rst),
-        .instruction(instruction),
+        .ins(instruction),
         .data1(data1),
         .PCSrc(s_PCSrc),
         .regWrite(s_regWrite),

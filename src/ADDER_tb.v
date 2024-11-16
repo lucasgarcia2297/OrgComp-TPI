@@ -23,5 +23,17 @@ module ADDER_tb;
         op2 = 32'h00000005;
         // sal = 32'h00000008
         #10;
+        op1 = 32'hxxxxxxxx;
+        op2 = 32'h00000004;
+        // sal = 32'h00000004
+        #10;
+        op1 = 32'h00000004;
+        op2 = 32'hxxxxxxxx;
+        // sal = 32'h00000004
+        #10;
+        op1 = 32'hxxxxxxxx;
+        op2 = 32'hxxxxxxxx;
+        // sal = 32'hxxxxxxxx
+        #10;
     end
 endmodule

@@ -1,5 +1,5 @@
 `default_nettype none
-`define DUMPSTR(x) `"TOP_tb.vcd`"
+// `define DUMPSTR(x) `"TOP_tb.vcd`"
 `timescale 1 ns / 1 ps
 
 module TOP_tb();
@@ -11,8 +11,16 @@ reg clk = 0;
 always #0.5 clk = ~clk;
 
 //-- Instantiate the unit to test
-Top UUT (
-    .clk(clk),
+TOP UUT (
+    .clk(clk)
 );
+
+initial begin
+    $dumpfile("TOP_tb.vcd");
+    $dumpvars(0, TOP_tb);
+
+    #150;
+    $finish;
+end
 
 endmodule

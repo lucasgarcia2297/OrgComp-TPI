@@ -1,4 +1,4 @@
-// `include "PC.v"
+// `include "../Componentes/PC.v"
 `timescale 1ns/1ns
 module PC_tb();
     //Declarar seniales para el test_bench

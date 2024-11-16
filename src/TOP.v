@@ -1,8 +1,9 @@
 // TOP
 // brief: module that unifies the RISC-V32I with the memory module and simulates a computer.
 
-`include "../MEMORY/MEMORY.v"
-`include "/RISC-V32I/RISCV32I.v"
+// `include "./src/MEMORY.v"
+// `include "./src/RISCV32I.v"
+// `include "../Components/IM/IM.v"
 
 module TOP(
     input wire clk                 // Clock;
@@ -16,7 +17,7 @@ module TOP(
     wire [31:0] instruction;            // Instruccion of the Instruction Memory
     wire [31:0] data;                   // Data of the Data Memory
 
-    MEM Memory(
+    MEMORY Memory(
         .clk(clk),
         .address_Instruction(pc[4:0]),
         .we(writeEnable),

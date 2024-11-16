@@ -1,8 +1,8 @@
 //MODULO: CONTROL UNIT
 //brief: Unidad de Control del camino de datos.
 
-`include "../ALUDECO/ALUDECO.v"
-`include "../MAINDECO/MAINDECO.v"
+// `include "../ALUDECO/ALUDECO.v"
+// `include "../MAINDECO/MAINDECO.v"
 
 module UC(
     input wire [6:0] opcode,        //Entrada opcode de 7 bits

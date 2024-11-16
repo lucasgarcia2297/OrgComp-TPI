@@ -1,9 +1,10 @@
-`include "../../Components/IM/IM.v"
-`include "../../Components/DM/DM.v"
 
 //MEMORIA
 /*brief: la Memoria agrupa los dos bancos de almacenamiento de la computadora
   a  simular: Memoria de Instrucciones y Memoria de Datos. */
+
+// `include "IM.v"
+// `include "DM.v"
 
 module MEMORY(   
   input wire clk,                             //Señal de reloj
