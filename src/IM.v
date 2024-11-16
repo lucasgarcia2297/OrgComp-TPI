@@ -62,7 +62,7 @@ end
 
 /*Leer la instruccion en la direccion especificada*/
 always @(addressIM) begin
-    deco_address = addressIM;
+    deco_address = addressIM/4;
 end;
 assign inst = memory[deco_address];
 

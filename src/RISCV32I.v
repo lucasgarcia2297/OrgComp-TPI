@@ -7,6 +7,7 @@
 module RISCV32I(
     // Entradas
     input wire clk,                 // Clock
+    input wire reset,               // Reset
     input wire [31:0] instruction,  // Instruction
     input wire [31:0] data1,        // Data from Memory: Data Memory
     // Salidas
@@ -21,7 +22,7 @@ module RISCV32I(
     wire s_funct7_b5;           // Funct7 bit 5
     wire [2:0] s_funct3;        // Funct3
     wire s_zero;                // Zero
-    wire s_PCSrc;               // PCSrc
+    wire [1:0] s_PCSrc;               // PCSrc
     wire [1:0] s_resSrc;        // ResSrc
     wire [2:0] s_ALUcontrol;    // ALUcontrol
     wire s_aluSrc;              // AluSrc
@@ -29,6 +30,7 @@ module RISCV32I(
     wire s_regWrite;            // RegWrite
 
     UC UnitControl(
+        .reset(reset),
         .opcode(s_opcode),
         .funct7_b5(s_funct7_b5),
         .funct3(s_funct3),
@@ -44,7 +46,6 @@ module RISCV32I(
 
     DATAPATH DataPath(
         .clk(clk),
-        // .rst(rst),
         .ins(instruction),
         .data1(data1),
         .PCSrc(s_PCSrc),

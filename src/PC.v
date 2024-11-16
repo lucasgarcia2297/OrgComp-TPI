@@ -8,6 +8,10 @@ module PC(
     
     reg [31:0] auxPC;
 
+    initial begin
+        auxPC = 32'b0;
+    end
+
     always @(posedge clk) begin
         auxPC <= pcNext;
     end

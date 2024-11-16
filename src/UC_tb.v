@@ -5,7 +5,7 @@ module UC_tb();
     reg [2:0] funct3;       // Entrada funct3.
     reg zero;               // Entrada zero.
     // Salidas 
-    wire PCSrc;             // Salida PCSrc.
+    wire [1:0] PCSrc;       // Salida PCSrc.
     wire [1:0] resSrc;      // Salida de resSrc de 2 bits correspondiente a data_S.
     wire memWrite;          // Salida memwrite.
     wire [2:0] ALUcontrol;  // Salida control de la ALU.

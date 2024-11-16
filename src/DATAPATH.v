@@ -12,12 +12,11 @@
 module DATAPATH(
     // Inputs
     input wire clk,                 // Clock
-    input wire rst,                 // Reset
     input wire [31:0] ins,          // Instruction                  // Viene de la Memory
     input wire [31:0] data1,        // Data de la memoria
     // input wire branch,             //Salida de branch // Reemplazada por PCSrc 
     // input wire jump,               //Salida de jump // Reemplazada por PCSrc 
-    input wire PCSrc,              // Origen de PC
+    input wire [1:0] PCSrc,              // Origen de PC 00: reset 01: PC+4 10: PC+Inm 
     input wire regWrite,           // Señal escritura en BR
     input wire [1:0] inmSrc,       // Señal origen de inmediato
     input wire aluSrc,             // Señal origen de ALU
@@ -47,13 +46,13 @@ module DATAPATH(
 
     //Consts
     reg [31:0] four = 32'b00000000000000000000000000000100;
+    reg [31:0] const_zero = 32'h00000000;
 
     //Assigns
     assign opcode = ins[6:0];
     assign f3 = ins[14:12];
     assign funct7_b5 = ins[29];
     assign writeData = SrcRD2;
-
 
     //Components
     // Contador de Programa
@@ -105,10 +104,20 @@ module DATAPATH(
         .sal(PCTarget)
     );
 
-    // M1: MUX2x1
-    MUX2x1 M1(
-        .in0(PC4),
-        .in1(PCTarget),
+    // // M1: MUX2x1
+    // MUX2x1 M1(
+    //     .in0(PC4),
+    //     .in1(PCTarget),
+    //     .sel(PCSrc),
+    //     .out(PC_Next)
+    // );
+
+    // M1: MUX4x1
+    MUX4x1 M1(
+        .in0(const_zero), // reset
+        .in1(PC4),
+        .in2(PCTarget),
+        .in3(PC4),
         .sel(PCSrc),
         .out(PC_Next)
     );

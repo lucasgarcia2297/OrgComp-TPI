@@ -6,7 +6,8 @@
 // `include "../Components/IM/IM.v"
 
 module TOP(
-    input wire clk                 // Clock;
+    input wire clk,                 // Clock;
+    input wire reset                // Reset;
     );
 
     // Wires
@@ -29,6 +30,7 @@ module TOP(
 
     RISCV32I RISCV32I(
         .clk(clk),
+        .reset(reset),
         .instruction(instruction),
         .data1(data),
         .pc(pc),
