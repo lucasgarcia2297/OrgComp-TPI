@@ -51,7 +51,7 @@ module DATAPATH(
     //Assigns
     assign opcode = ins[6:0];
     assign f3 = ins[14:12];
-    assign funct7_b5 = ins[29];
+    assign funct7_b5 = ins[30];
     assign writeData = SrcRD2;
 
     //Components

@@ -17,10 +17,10 @@ module ALU(
             3'b001: aux = srcA - srcB;                   //SUB
             3'b010: aux = srcA & srcB;                   //AND
             3'b011: aux = srcA | srcB;                   //OR
-            3'b101: aux = (srcA < srcB) ? 1'b1 : 1'b0;   //SLT
+            3'b101: aux = ($signed(srcA) < $signed(srcB)) ? 1'b1 : 1'b0;   //SLT   //SLT
             default: aux = 32'bx;                        //Valor predeterminado
         endcase
-        if((aluControl == 3'b001) | (aux == 32'b0)) begin
+        if(aux == 32'b0) begin
             auxZero <= 1'b1;
         end
         else begin

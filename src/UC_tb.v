@@ -50,6 +50,16 @@ module UC_tb();
         funct3 = 3'b000;
         zero = 1'b0;   
         #5;
+
+        // Ejemplo de un SUB
+        opcode = 7'b0110011;
+        f7 = 7'b0000000;
+        funct7_b5 = f7[5];
+        funct3 = 3'b000;
+        zero = 1'b0;   
+        #5;
+
+
         $finish;
     end
 endmodule;
