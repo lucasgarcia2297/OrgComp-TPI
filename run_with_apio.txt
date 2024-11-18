@@ -6,15 +6,16 @@ Requisitos:
 
 Para ejecutar con apio: 
 
-1- "cd" a la carpeta del componente a probar
+1- "cd" a la carpeta del código fuente
+        cd /src
 2- init: ejecutar comando 
         apio init -b edu-ciaa-fpga
 
-3- verify: ejecutar comando
+3- verify: ejecutar comando para verificar la sintaxis del código
         apio verify
 
-4- simulate: ejecutar comando y se abrirá gtkwave
-        apio sim
+4- simulate TOP: ejecutar comando y se abrirá gtkwave
+        apio sim -t .\TOP_tb.v
 
 ----------------
 EXTRA: 
